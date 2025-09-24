@@ -1,0 +1,19 @@
+2025-09-17 23:20:00,502 - pretrained_integration - INFO - Starting pretrained ECG integration pipeline...
+2025-09-17 23:20:00,502 - pretrained_integration - INFO - Using device: cuda
+2025-09-17 23:20:00,502 - pretrained_integration - WARNING - No pretrained ECG model found, will use random initialization
+2025-09-17 23:20:00,502 - pretrained_integration - INFO - Loading processed data from /home/jaadoo/Documents/Projects/CAPSTONE/project_root/data/processed/multimodal_data.npz
+2025-09-17 23:20:11,195 - pretrained_integration - INFO - Data loaded - Train: 38767, Val: 12923, Test: 12923
+2025-09-17 23:20:11,195 - pretrained_integration - INFO - Class distribution - Train: [32028   304  2460   242  3733]
+2025-09-17 23:20:13,337 - pretrained_integration - WARNING - Pretrained weights not found at None, using random initialization
+2025-09-17 23:20:13,970 - pretrained_integration - INFO - Model initialized with pretrained ECG encoder
+2025-09-17 23:20:13,970 - pretrained_integration - INFO - Total parameters: 1,254,629
+2025-09-17 23:20:13,970 - pretrained_integration - INFO - Trainable parameters: 81,798
+2025-09-17 23:20:15,338 - pretrained_integration - INFO - Starting fine-tuning for 3 epochs...
+2025-09-17 23:20:15,551 - pretrained_integration - ERROR - Pipeline failed: too many values to unpack (expected 4)
+Traceback (most recent call last):
+  File "/home/jaadoo/Documents/Projects/CAPSTONE/project_root/pretrained_integration.py", line 489, in <module>
+    main()
+  File "/home/jaadoo/Documents/Projects/CAPSTONE/project_root/pretrained_integration.py", line 397, in main
+    for batch_idx, (ecg, ppg, y_arr, y_stroke) in enumerate(train_loader):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 4)

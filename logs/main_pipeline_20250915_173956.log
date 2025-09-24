@@ -1,0 +1,46 @@
+2025-09-15 17:39:56,649 - main_pipeline - INFO - Starting ECG+PPG multimodal pipeline...
+2025-09-15 17:39:56,649 - main_pipeline - INFO - Using device: cuda
+2025-09-15 17:39:56,649 - main_pipeline - INFO - Directory structure created successfully
+2025-09-15 17:39:56,649 - main_pipeline - INFO - Loading and preprocessing data...
+2025-09-15 17:39:56,650 - main_pipeline - INFO - Found 48 MIT-BIH records
+2025-09-15 17:39:56,741 - main_pipeline - INFO - Processed record 100: 2265 windows
+2025-09-15 17:39:56,807 - main_pipeline - INFO - Processed record 101: 1860 windows
+2025-09-15 17:39:56,866 - main_pipeline - INFO - Processed record 102: 2181 windows
+2025-09-15 17:39:56,922 - main_pipeline - INFO - Processed record 103: 2078 windows
+2025-09-15 17:39:56,984 - main_pipeline - INFO - Processed record 104: 2223 windows
+2025-09-15 17:39:57,055 - main_pipeline - INFO - Processed record 105: 2565 windows
+2025-09-15 17:39:57,114 - main_pipeline - INFO - Processed record 106: 2021 windows
+2025-09-15 17:39:57,173 - main_pipeline - INFO - Processed record 107: 2132 windows
+2025-09-15 17:39:57,229 - main_pipeline - INFO - Processed record 108: 1758 windows
+2025-09-15 17:39:57,296 - main_pipeline - INFO - Processed record 109: 2525 windows
+2025-09-15 17:39:57,356 - main_pipeline - INFO - Processed record 111: 2118 windows
+2025-09-15 17:39:57,424 - main_pipeline - INFO - Processed record 112: 2532 windows
+2025-09-15 17:39:57,481 - main_pipeline - INFO - Processed record 113: 1790 windows
+2025-09-15 17:39:57,534 - main_pipeline - INFO - Processed record 114: 1873 windows
+2025-09-15 17:39:57,592 - main_pipeline - INFO - Processed record 115: 1947 windows
+2025-09-15 17:39:57,656 - main_pipeline - INFO - Processed record 116: 2405 windows
+2025-09-15 17:39:57,707 - main_pipeline - INFO - Processed record 117: 1530 windows
+2025-09-15 17:39:57,769 - main_pipeline - INFO - Processed record 118: 2272 windows
+2025-09-15 17:39:57,828 - main_pipeline - INFO - Processed record 119: 1982 windows
+2025-09-15 17:39:57,884 - main_pipeline - INFO - Processed record 121: 1857 windows
+2025-09-15 17:39:57,952 - main_pipeline - INFO - Processed record 122: 2469 windows
+2025-09-15 17:39:58,005 - main_pipeline - INFO - Processed record 123: 1513 windows
+2025-09-15 17:39:58,057 - main_pipeline - INFO - Processed record 124: 1614 windows
+2025-09-15 17:39:58,133 - main_pipeline - INFO - Processed record 200: 2594 windows
+2025-09-15 17:39:58,194 - main_pipeline - INFO - Processed record 201: 1959 windows
+2025-09-15 17:39:58,255 - main_pipeline - INFO - Processed record 202: 2129 windows
+2025-09-15 17:39:58,342 - main_pipeline - INFO - Processed record 203: 2974 windows
+2025-09-15 17:39:58,412 - main_pipeline - INFO - Processed record 205: 2649 windows
+2025-09-15 17:39:58,473 - main_pipeline - INFO - Processed record 207: 1851 windows
+2025-09-15 17:39:58,552 - main_pipeline - INFO - Processed record 208: 2947 windows
+2025-09-15 17:39:58,727 - main_pipeline - INFO - Total ECG windows: 64613
+2025-09-15 17:39:58,727 - main_pipeline - INFO - Class distribution: [53382   507  4100   402  6222]
+2025-09-15 17:39:58,727 - main_pipeline - INFO - Generating synthetic PPG data (replace with real PPG in production)
+2025-09-15 17:40:09,312 - main_pipeline - INFO - Applying signal preprocessing...
+2025-09-15 17:41:24,578 - main_pipeline - INFO - Data split - Train: 38767, Val: 12923, Test: 12923
+2025-09-15 17:42:49,215 - main_pipeline - INFO - Processed data saved to /home/jaadoo/Documents/Projects/CAPSTONE/project_root/data/processed/multimodal_data.npz
+2025-09-15 17:42:49,229 - main_pipeline - INFO - Creating data loaders...
+2025-09-15 17:42:49,488 - main_pipeline - INFO - Created data loaders - Train batches: 1212, Val batches: 404
+2025-09-15 17:42:49,488 - main_pipeline - INFO - Initializing and training model...
+2025-09-15 17:42:49,634 - main_pipeline - INFO - Model initialized on cuda
+2025-09-15 17:42:49,634 - main_pipeline - INFO - Total parameters: 1,288,454

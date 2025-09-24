@@ -1,0 +1,66 @@
+2025-09-15 16:36:38,578 - main_pipeline - INFO - Starting ECG+PPG multimodal pipeline...
+2025-09-15 16:36:38,578 - main_pipeline - INFO - Using device: cuda
+2025-09-15 16:36:38,578 - main_pipeline - INFO - Directory structure created successfully
+2025-09-15 16:36:38,578 - main_pipeline - INFO - Loading and preprocessing data...
+2025-09-15 16:36:38,579 - main_pipeline - INFO - Found 48 MIT-BIH records
+2025-09-15 16:36:38,648 - main_pipeline - INFO - Processed record 100: 2265 windows
+2025-09-15 16:36:38,700 - main_pipeline - INFO - Processed record 101: 1860 windows
+2025-09-15 16:36:38,755 - main_pipeline - INFO - Processed record 102: 2181 windows
+2025-09-15 16:36:38,806 - main_pipeline - INFO - Processed record 103: 2078 windows
+2025-09-15 16:36:38,863 - main_pipeline - INFO - Processed record 104: 2223 windows
+2025-09-15 16:36:38,928 - main_pipeline - INFO - Processed record 105: 2565 windows
+2025-09-15 16:36:38,984 - main_pipeline - INFO - Processed record 106: 2021 windows
+2025-09-15 16:36:39,039 - main_pipeline - INFO - Processed record 107: 2132 windows
+2025-09-15 16:36:39,090 - main_pipeline - INFO - Processed record 108: 1758 windows
+2025-09-15 16:36:39,152 - main_pipeline - INFO - Processed record 109: 2525 windows
+2025-09-15 16:36:39,207 - main_pipeline - INFO - Processed record 111: 2118 windows
+2025-09-15 16:36:39,271 - main_pipeline - INFO - Processed record 112: 2532 windows
+2025-09-15 16:36:39,324 - main_pipeline - INFO - Processed record 113: 1790 windows
+2025-09-15 16:36:39,378 - main_pipeline - INFO - Processed record 114: 1873 windows
+2025-09-15 16:36:39,431 - main_pipeline - INFO - Processed record 115: 1947 windows
+2025-09-15 16:36:39,483 - main_pipeline - INFO - Processed record 116: 2405 windows
+2025-09-15 16:36:39,526 - main_pipeline - INFO - Processed record 117: 1530 windows
+2025-09-15 16:36:39,581 - main_pipeline - INFO - Processed record 118: 2272 windows
+2025-09-15 16:36:39,634 - main_pipeline - INFO - Processed record 119: 1982 windows
+2025-09-15 16:36:39,686 - main_pipeline - INFO - Processed record 121: 1857 windows
+2025-09-15 16:36:39,746 - main_pipeline - INFO - Processed record 122: 2469 windows
+2025-09-15 16:36:39,793 - main_pipeline - INFO - Processed record 123: 1513 windows
+2025-09-15 16:36:39,839 - main_pipeline - INFO - Processed record 124: 1614 windows
+2025-09-15 16:36:39,910 - main_pipeline - INFO - Processed record 200: 2594 windows
+2025-09-15 16:36:39,963 - main_pipeline - INFO - Processed record 201: 1959 windows
+2025-09-15 16:36:40,018 - main_pipeline - INFO - Processed record 202: 2129 windows
+2025-09-15 16:36:40,088 - main_pipeline - INFO - Processed record 203: 2974 windows
+2025-09-15 16:36:40,150 - main_pipeline - INFO - Processed record 205: 2649 windows
+2025-09-15 16:36:40,204 - main_pipeline - INFO - Processed record 207: 1851 windows
+2025-09-15 16:36:40,275 - main_pipeline - INFO - Processed record 208: 2947 windows
+2025-09-15 16:36:40,442 - main_pipeline - INFO - Total ECG windows: 64613
+2025-09-15 16:36:40,442 - main_pipeline - INFO - Class distribution: [53382   507  4100   402  6222]
+2025-09-15 16:36:40,442 - main_pipeline - INFO - Generating synthetic PPG data (replace with real PPG in production)
+2025-09-15 16:36:49,587 - main_pipeline - INFO - Applying signal preprocessing...
+2025-09-15 16:38:02,697 - main_pipeline - INFO - Data split - Train: 38767, Val: 12923, Test: 12923
+2025-09-15 16:39:23,019 - main_pipeline - INFO - Processed data saved to /home/jaadoo/Documents/Projects/CAPSTONE/project_root/data/processed/multimodal_data.npz
+2025-09-15 16:39:23,048 - main_pipeline - INFO - Creating data loaders...
+2025-09-15 16:39:23,958 - main_pipeline - INFO - Created data loaders - Train batches: 1212, Val batches: 404
+2025-09-15 16:39:23,958 - main_pipeline - INFO - Initializing and training model...
+2025-09-15 16:39:24,153 - main_pipeline - INFO - Model initialized on cuda
+2025-09-15 16:39:24,153 - main_pipeline - INFO - Total parameters: 1,288,454
+2025-09-15 16:39:26,663 - main_pipeline - ERROR - Pipeline failed: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/home/jaadoo/Documents/Projects/CAPSTONE/project_root/1.py", line 647, in <module>
+    main()
+  File "/home/jaadoo/Documents/Projects/CAPSTONE/project_root/1.py", line 576, in main
+    model, history = train_model(train_loader, val_loader, ecg_seq_len, ppg_seq_len)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jaadoo/Documents/Projects/CAPSTONE/project_root/1.py", line 209, in train_model
+    trained_model, history = train_multimodal(
+                             ^^^^^^^^^^^^^^^^^
+  File "/home/jaadoo/Documents/Projects/CAPSTONE/project_root/src/train.py", line 508, in train_multimodal
+    history = trainer.train()
+              ^^^^^^^^^^^^^^^
+  File "/home/jaadoo/Documents/Projects/CAPSTONE/project_root/src/train.py", line 332, in train
+    train_metrics = self.train_epoch()
+                    ^^^^^^^^^^^^^^^^^^
+  File "/home/jaadoo/Documents/Projects/CAPSTONE/project_root/src/train.py", line 213, in train_epoch
+    all_probabilities.extend(probs.cpu().numpy())
+                             ^^^^^^^^^^^^^^^^^^^
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.

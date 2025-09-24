@@ -1,0 +1,168 @@
+version: "3.8"
+
+services:
+  # Main ECG+PPG Analysis API Service
+  ecg-ppg-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecg_ppg_api
+    restart: unless-stopped
+    
+    # GPU support (uncomment if GPU available)
+    # runtime: nvidia
+    # environment:
+    #   - NVIDIA_VISIBLE_DEVICES=all
+    #   - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    
+    ports:
+      - "8081:8081"
+    
+    volumes:
+      # Persistent data storage
+      - ./data:/workspace/data
+      - ./models:/workspace/models
+      - ./reports:/workspace/reports
+      - ./logs:/workspace/logs
+      # Configuration override
+      - ./src/config.py:/workspace/src/config.py
+    
+    environment:
+      - PYTHONPATH=/workspace
+      - CUDA_VISIBLE_DEVICES=0
+      - LOG_LEVEL=INFO
+      - API_WORKERS=1
+    
+    command: uvicorn src.api:app --host 0.0.0.0 --port 8081 --workers 1
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    depends_on:
+      - redis
+    
+    networks:
+      - ecg_network
+
+  # Redis for caching and session storage
+  redis:
+    image: redis:7-alpine
+    container_name: ecg_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    networks:
+      - ecg_network
+
+  # Nginx reverse proxy (optional for production)
+  nginx:
+    image: nginx:alpine
+    container_name: ecg_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro  # SSL certificates (if available)
+      - ./reports:/var/www/reports:ro  # Serve reports directly
+    depends_on:
+      - ecg-ppg-api
+    networks:
+      - ecg_network
+    profiles:
+      - production
+
+  # Training service (run separately)
+  ecg-ppg-training:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecg_training
+    
+    # GPU support (recommended for training)
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    
+    volumes:
+      - ./data:/workspace/data
+      - ./models:/workspace/models
+      - ./reports:/workspace/reports
+      - ./logs:/workspace/logs
+    
+    environment:
+      - PYTHONPATH=/workspace
+      - CUDA_VISIBLE_DEVICES=0
+    
+    command: python 1.py
+    
+    networks:
+      - ecg_network
+    
+    profiles:
+      - training
+
+  # Monitoring with Prometheus (optional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: ecg_prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - ecg_network
+    profiles:
+      - monitoring
+
+  # Grafana for visualization (optional)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: ecg_grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    depends_on:
+      - prometheus
+    networks:
+      - ecg_network
+    profiles:
+      - monitoring
+
+volumes:
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+networks:
+  ecg_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

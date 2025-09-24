@@ -1,0 +1,286 @@
+2025-06-20 18:03:08,615 - INFO - ================================================================================
+2025-06-20 18:03:08,615 - INFO - Starting MIT-BIH Arrhythmia classification with CNN-LSTM model
+2025-06-20 18:03:08,615 - INFO - ================================================================================
+2025-06-20 18:03:08,615 - INFO - Using wfdb version 4.3.0
+2025-06-20 18:03:08,615 - INFO - PyTorch version: 2.5.1+cu121
+2025-06-20 18:03:08,713 - INFO - CUDA available: True
+2025-06-20 18:03:08,731 - INFO - CUDA device: NVIDIA GeForce MX570 A
+2025-06-20 18:03:08,731 - INFO - Loading data from mit-bih-arrhythmia-database-1.0.0...
+2025-06-20 18:03:08,731 - INFO - Loading MIT-BIH data with window size 360 and class mapping: {'N': 0, 'S': 1, 'V': 2, 'F': 3, 'U': 4}
+2025-06-20 18:03:08,732 - INFO - Found 48 records in the dataset
+2025-06-20 18:03:08,732 - INFO - Processing record 100...
+2025-06-20 18:03:08,788 - INFO -   Record 100: Extracted 2238 beats - {'N': 2237, 'S': 0, 'V': 1, 'F': 0, 'U': 0}
+2025-06-20 18:03:08,788 - INFO - Processing record 101...
+2025-06-20 18:03:08,876 - INFO -   Record 101: Extracted 1859 beats - {'N': 1859, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:08,877 - INFO - Processing record 102...
+2025-06-20 18:03:08,912 - INFO -   Record 102: Extracted 103 beats - {'N': 99, 'S': 0, 'V': 4, 'F': 0, 'U': 0}
+2025-06-20 18:03:08,912 - INFO - Processing record 103...
+2025-06-20 18:03:08,949 - INFO -   Record 103: Extracted 2081 beats - {'N': 2081, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:08,949 - INFO - Processing record 104...
+2025-06-20 18:03:08,987 - INFO -   Record 104: Extracted 165 beats - {'N': 163, 'S': 0, 'V': 2, 'F': 0, 'U': 0}
+2025-06-20 18:03:08,987 - INFO - Processing record 105...
+2025-06-20 18:03:09,028 - INFO -   Record 105: Extracted 2567 beats - {'N': 2526, 'S': 0, 'V': 41, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,029 - INFO - Processing record 106...
+2025-06-20 18:03:09,063 - INFO -   Record 106: Extracted 2027 beats - {'N': 1507, 'S': 0, 'V': 520, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,063 - INFO - Processing record 107...
+2025-06-20 18:03:09,096 - INFO -   Record 107: Extracted 59 beats - {'N': 0, 'S': 0, 'V': 59, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,096 - INFO - Processing record 108...
+2025-06-20 18:03:09,137 - INFO -   Record 108: Extracted 1757 beats - {'N': 1738, 'S': 0, 'V': 17, 'F': 2, 'U': 0}
+2025-06-20 18:03:09,138 - INFO - Processing record 109...
+2025-06-20 18:03:09,173 - INFO -   Record 109: Extracted 40 beats - {'N': 0, 'S': 0, 'V': 38, 'F': 2, 'U': 0}
+2025-06-20 18:03:09,173 - INFO - Processing record 111...
+2025-06-20 18:03:09,209 - INFO -   Record 111: Extracted 1 beats - {'N': 0, 'S': 0, 'V': 1, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,209 - INFO - Processing record 112...
+2025-06-20 18:03:09,254 - INFO -   Record 112: Extracted 2535 beats - {'N': 2535, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,254 - INFO - Processing record 113...
+2025-06-20 18:03:09,290 - INFO -   Record 113: Extracted 1787 beats - {'N': 1787, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,290 - INFO - Processing record 114...
+2025-06-20 18:03:09,326 - INFO -   Record 114: Extracted 1867 beats - {'N': 1820, 'S': 0, 'V': 43, 'F': 4, 'U': 0}
+2025-06-20 18:03:09,326 - INFO - Processing record 115...
+2025-06-20 18:03:09,370 - INFO -   Record 115: Extracted 1951 beats - {'N': 1951, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,371 - INFO - Processing record 116...
+2025-06-20 18:03:09,417 - INFO -   Record 116: Extracted 2410 beats - {'N': 2301, 'S': 0, 'V': 109, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,417 - INFO - Processing record 117...
+2025-06-20 18:03:09,467 - INFO -   Record 117: Extracted 1533 beats - {'N': 1533, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,467 - INFO - Processing record 118...
+2025-06-20 18:03:09,513 - INFO -   Record 118: Extracted 16 beats - {'N': 0, 'S': 0, 'V': 16, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,513 - INFO - Processing record 119...
+2025-06-20 18:03:09,553 - INFO -   Record 119: Extracted 1987 beats - {'N': 1543, 'S': 0, 'V': 444, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,553 - INFO - Processing record 121...
+2025-06-20 18:03:09,594 - INFO -   Record 121: Extracted 1860 beats - {'N': 1859, 'S': 0, 'V': 1, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,594 - INFO - Processing record 122...
+2025-06-20 18:03:09,635 - INFO -   Record 122: Extracted 2474 beats - {'N': 2474, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,636 - INFO - Processing record 123...
+2025-06-20 18:03:09,674 - INFO -   Record 123: Extracted 1517 beats - {'N': 1514, 'S': 0, 'V': 3, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,675 - INFO - Processing record 124...
+2025-06-20 18:03:09,713 - INFO -   Record 124: Extracted 52 beats - {'N': 0, 'S': 0, 'V': 47, 'F': 5, 'U': 0}
+2025-06-20 18:03:09,713 - INFO - Processing record 200...
+2025-06-20 18:03:09,757 - INFO -   Record 200: Extracted 2570 beats - {'N': 1742, 'S': 0, 'V': 826, 'F': 2, 'U': 0}
+2025-06-20 18:03:09,757 - INFO - Processing record 201...
+2025-06-20 18:03:09,798 - INFO -   Record 201: Extracted 1824 beats - {'N': 1624, 'S': 0, 'V': 198, 'F': 2, 'U': 0}
+2025-06-20 18:03:09,798 - INFO - Processing record 202...
+2025-06-20 18:03:09,837 - INFO -   Record 202: Extracted 2080 beats - {'N': 2060, 'S': 0, 'V': 19, 'F': 1, 'U': 0}
+2025-06-20 18:03:09,837 - INFO - Processing record 203...
+2025-06-20 18:03:09,878 - INFO -   Record 203: Extracted 2973 beats - {'N': 2528, 'S': 0, 'V': 444, 'F': 1, 'U': 0}
+2025-06-20 18:03:09,878 - INFO - Processing record 205...
+2025-06-20 18:03:09,919 - INFO -   Record 205: Extracted 2652 beats - {'N': 2570, 'S': 0, 'V': 71, 'F': 11, 'U': 0}
+2025-06-20 18:03:09,919 - INFO - Processing record 207...
+2025-06-20 18:03:09,956 - INFO -   Record 207: Extracted 105 beats - {'N': 0, 'S': 0, 'V': 105, 'F': 0, 'U': 0}
+2025-06-20 18:03:09,956 - INFO - Processing record 208...
+2025-06-20 18:03:09,998 - INFO -   Record 208: Extracted 2951 beats - {'N': 1585, 'S': 2, 'V': 992, 'F': 372, 'U': 0}
+2025-06-20 18:03:09,998 - INFO - Processing record 209...
+2025-06-20 18:03:10,039 - INFO -   Record 209: Extracted 2621 beats - {'N': 2620, 'S': 0, 'V': 1, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,039 - INFO - Processing record 210...
+2025-06-20 18:03:10,076 - INFO -   Record 210: Extracted 2625 beats - {'N': 2421, 'S': 0, 'V': 194, 'F': 10, 'U': 0}
+2025-06-20 18:03:10,076 - INFO - Processing record 212...
+2025-06-20 18:03:10,110 - INFO -   Record 212: Extracted 922 beats - {'N': 922, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,110 - INFO - Processing record 213...
+2025-06-20 18:03:10,156 - INFO -   Record 213: Extracted 3221 beats - {'N': 2639, 'S': 0, 'V': 220, 'F': 362, 'U': 0}
+2025-06-20 18:03:10,156 - INFO - Processing record 214...
+2025-06-20 18:03:10,191 - INFO -   Record 214: Extracted 257 beats - {'N': 0, 'S': 0, 'V': 256, 'F': 1, 'U': 0}
+2025-06-20 18:03:10,191 - INFO - Processing record 215...
+2025-06-20 18:03:10,231 - INFO -   Record 215: Extracted 3358 beats - {'N': 3193, 'S': 0, 'V': 164, 'F': 1, 'U': 0}
+2025-06-20 18:03:10,231 - INFO - Processing record 217...
+2025-06-20 18:03:10,270 - INFO -   Record 217: Extracted 406 beats - {'N': 244, 'S': 0, 'V': 162, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,271 - INFO - Processing record 219...
+2025-06-20 18:03:10,312 - INFO -   Record 219: Extracted 2147 beats - {'N': 2082, 'S': 0, 'V': 64, 'F': 1, 'U': 0}
+2025-06-20 18:03:10,312 - INFO - Processing record 220...
+2025-06-20 18:03:10,348 - INFO -   Record 220: Extracted 1952 beats - {'N': 1952, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,348 - INFO - Processing record 221...
+2025-06-20 18:03:10,386 - INFO -   Record 221: Extracted 2427 beats - {'N': 2031, 'S': 0, 'V': 396, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,386 - INFO - Processing record 222...
+2025-06-20 18:03:10,421 - INFO -   Record 222: Extracted 2060 beats - {'N': 2060, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,421 - INFO - Processing record 223...
+2025-06-20 18:03:10,471 - INFO -   Record 223: Extracted 2515 beats - {'N': 2028, 'S': 0, 'V': 473, 'F': 14, 'U': 0}
+2025-06-20 18:03:10,471 - INFO - Processing record 228...
+2025-06-20 18:03:10,511 - INFO -   Record 228: Extracted 2049 beats - {'N': 1687, 'S': 0, 'V': 362, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,511 - INFO - Processing record 230...
+2025-06-20 18:03:10,550 - INFO -   Record 230: Extracted 2255 beats - {'N': 2254, 'S': 0, 'V': 1, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,550 - INFO - Processing record 231...
+2025-06-20 18:03:10,589 - INFO -   Record 231: Extracted 316 beats - {'N': 314, 'S': 0, 'V': 2, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,589 - INFO - Processing record 232...
+2025-06-20 18:03:10,625 - INFO -   Record 232: Extracted 0 beats - {'N': 0, 'S': 0, 'V': 0, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,625 - INFO - Processing record 233...
+2025-06-20 18:03:10,669 - INFO -   Record 233: Extracted 3070 beats - {'N': 2229, 'S': 0, 'V': 830, 'F': 11, 'U': 0}
+2025-06-20 18:03:10,669 - INFO - Processing record 234...
+2025-06-20 18:03:10,702 - INFO -   Record 234: Extracted 2702 beats - {'N': 2699, 'S': 0, 'V': 3, 'F': 0, 'U': 0}
+2025-06-20 18:03:10,787 - INFO - Data loading complete. Total samples: 82944
+2025-06-20 18:03:10,788 - INFO - Class distribution: [75011     2  7129   802]
+2025-06-20 18:03:10,794 - INFO - Loaded 82944 ECG segments with 4 classes
+2025-06-20 18:03:10,795 - INFO - Class distribution: [75011     2  7129   802]
+2025-06-20 18:03:10,795 - INFO - Normalizing data...
+2025-06-20 18:03:24,398 - INFO - Normalization completed in 13.60s
+2025-06-20 18:03:24,398 - INFO - Splitting into train and test sets...
+2025-06-20 18:03:24,479 - INFO - Training set: (66355, 360), Test set: (16589, 360)
+2025-06-20 18:03:24,479 - INFO - Training CNN-LSTM model...
+2025-06-20 18:03:24,479 - INFO - Starting CNN-LSTM model training
+2025-06-20 18:03:24,479 - INFO - Input shapes - X_train: (66355, 360), Y_train: (66355,), X_test: (16589, 360), Y_test: (16589,)
+2025-06-20 18:03:24,479 - INFO - Using device: cuda
+2025-06-20 18:03:24,479 - INFO - Training set class distribution: [60009     2  5703   641]
+2025-06-20 18:03:24,480 - INFO - Test set class distribution: [15002     0  1426   161]
+2025-06-20 18:03:24,523 - INFO - Converting data to PyTorch tensors
+2025-06-20 18:03:24,558 - INFO - Creating DataLoaders with batch size 128
+2025-06-20 18:03:24,559 - INFO - Initializing model with input dimension 360
+2025-06-20 18:03:24,730 - INFO - Model parameters - Total: 788,081, Trainable: 788,081
+2025-06-20 18:03:25,729 - INFO - Using Adam optimizer with learning rate 0.001 and CrossEntropyLoss
+2025-06-20 18:03:25,729 - INFO - Starting training for 2 epochs
+2025-06-20 18:03:25,729 - INFO - Epoch 1/2 - Training phase
+2025-06-20 18:03:27,949 - INFO -   Batch 10/519, Loss: 1.7694, Batch time: 0.1562s
+2025-06-20 18:03:29,522 - INFO -   Batch 20/519, Loss: 1.7338, Batch time: 0.1566s
+2025-06-20 18:03:31,115 - INFO -   Batch 30/519, Loss: 1.7536, Batch time: 0.1645s
+2025-06-20 18:03:32,797 - INFO -   Batch 40/519, Loss: 1.7285, Batch time: 0.1687s
+2025-06-20 18:03:34,483 - INFO -   Batch 50/519, Loss: 1.7236, Batch time: 0.1736s
+2025-06-20 18:03:36,118 - INFO -   Batch 60/519, Loss: 1.6900, Batch time: 0.1674s
+2025-06-20 18:03:37,805 - INFO -   Batch 70/519, Loss: 1.6909, Batch time: 0.1674s
+2025-06-20 18:03:39,468 - INFO -   Batch 80/519, Loss: 1.6814, Batch time: 0.1601s
+2025-06-20 18:03:41,074 - INFO -   Batch 90/519, Loss: 1.6541, Batch time: 0.1604s
+2025-06-20 18:03:42,679 - INFO -   Batch 100/519, Loss: 1.6495, Batch time: 0.1608s
+2025-06-20 18:03:44,302 - INFO -   Batch 110/519, Loss: 1.6352, Batch time: 0.1731s
+2025-06-20 18:03:46,000 - INFO -   Batch 120/519, Loss: 1.6145, Batch time: 0.1707s
+2025-06-20 18:03:47,692 - INFO -   Batch 130/519, Loss: 1.6070, Batch time: 0.1603s
+2025-06-20 18:03:49,300 - INFO -   Batch 140/519, Loss: 1.5881, Batch time: 0.1605s
+2025-06-20 18:03:50,983 - INFO -   Batch 150/519, Loss: 1.5822, Batch time: 0.1693s
+2025-06-20 18:03:52,692 - INFO -   Batch 160/519, Loss: 1.5580, Batch time: 0.1702s
+2025-06-20 18:03:54,334 - INFO -   Batch 170/519, Loss: 1.5501, Batch time: 0.1610s
+2025-06-20 18:03:56,027 - INFO -   Batch 180/519, Loss: 1.5355, Batch time: 0.1723s
+2025-06-20 18:03:57,735 - INFO -   Batch 190/519, Loss: 1.5244, Batch time: 0.1698s
+2025-06-20 18:03:59,378 - INFO -   Batch 200/519, Loss: 1.5042, Batch time: 0.1603s
+2025-06-20 18:04:01,035 - INFO -   Batch 210/519, Loss: 1.4957, Batch time: 0.1738s
+2025-06-20 18:04:02,750 - INFO -   Batch 220/519, Loss: 1.4776, Batch time: 0.1702s
+2025-06-20 18:04:04,421 - INFO -   Batch 230/519, Loss: 1.4703, Batch time: 0.1611s
+2025-06-20 18:04:06,141 - INFO -   Batch 240/519, Loss: 1.4568, Batch time: 0.1709s
+2025-06-20 18:04:07,866 - INFO -   Batch 250/519, Loss: 1.4454, Batch time: 0.1803s
+2025-06-20 18:04:09,481 - INFO -   Batch 260/519, Loss: 1.4412, Batch time: 0.1613s
+2025-06-20 18:04:11,104 - INFO -   Batch 270/519, Loss: 1.4154, Batch time: 0.1579s
+2025-06-20 18:04:12,705 - INFO -   Batch 280/519, Loss: 1.4126, Batch time: 0.1614s
+2025-06-20 18:04:14,403 - INFO -   Batch 290/519, Loss: 1.3949, Batch time: 0.1711s
+2025-06-20 18:04:16,135 - INFO -   Batch 300/519, Loss: 1.3864, Batch time: 0.1734s
+2025-06-20 18:04:17,786 - INFO -   Batch 310/519, Loss: 1.3713, Batch time: 0.1622s
+2025-06-20 18:04:19,415 - INFO -   Batch 320/519, Loss: 1.3658, Batch time: 0.1712s
+2025-06-20 18:04:21,154 - INFO -   Batch 330/519, Loss: 1.3577, Batch time: 0.1718s
+2025-06-20 18:04:22,873 - INFO -   Batch 340/519, Loss: 1.3461, Batch time: 0.1609s
+2025-06-20 18:04:24,494 - INFO -   Batch 350/519, Loss: 1.3182, Batch time: 0.1629s
+2025-06-20 18:04:26,127 - INFO -   Batch 360/519, Loss: 1.3028, Batch time: 0.1706s
+2025-06-20 18:04:27,805 - INFO -   Batch 370/519, Loss: 1.2988, Batch time: 0.1769s
+2025-06-20 18:04:29,549 - INFO -   Batch 380/519, Loss: 1.2892, Batch time: 0.1762s
+2025-06-20 18:04:31,239 - INFO -   Batch 390/519, Loss: 1.2633, Batch time: 0.1627s
+2025-06-20 18:04:32,865 - INFO -   Batch 400/519, Loss: 1.2815, Batch time: 0.1624s
+2025-06-20 18:04:34,491 - INFO -   Batch 410/519, Loss: 1.2577, Batch time: 0.1631s
+2025-06-20 18:04:36,118 - INFO -   Batch 420/519, Loss: 1.2422, Batch time: 0.1618s
+2025-06-20 18:04:37,747 - INFO -   Batch 430/519, Loss: 1.2239, Batch time: 0.1627s
+2025-06-20 18:04:39,376 - INFO -   Batch 440/519, Loss: 1.2235, Batch time: 0.1625s
+2025-06-20 18:04:41,006 - INFO -   Batch 450/519, Loss: 1.2206, Batch time: 0.1629s
+2025-06-20 18:04:42,636 - INFO -   Batch 460/519, Loss: 1.2076, Batch time: 0.1630s
+2025-06-20 18:04:44,350 - INFO -   Batch 470/519, Loss: 1.1914, Batch time: 0.1753s
+2025-06-20 18:04:46,120 - INFO -   Batch 480/519, Loss: 1.1873, Batch time: 0.1768s
+2025-06-20 18:04:47,795 - INFO -   Batch 490/519, Loss: 1.1625, Batch time: 0.1640s
+2025-06-20 18:04:49,556 - INFO -   Batch 500/519, Loss: 1.1601, Batch time: 0.1775s
+2025-06-20 18:04:51,322 - INFO -   Batch 510/519, Loss: 1.1643, Batch time: 0.1747s
+2025-06-20 18:04:52,852 - INFO -   Training - Loss: 1.4452, Accuracy: 50.94%, Avg batch time: 0.1674s
+2025-06-20 18:04:52,853 - INFO - Epoch 1/2 - Validation phase
+2025-06-20 18:05:06,882 - INFO -   Validation - Loss: 1.1417, Accuracy: 90.43%
+2025-06-20 18:05:06,883 - INFO -   Per-class accuracy: Class 0: 100.00%, Class 1: N/A, Class 2: 0.00%, Class 3: 0.00%, Class 4: N/A
+2025-06-20 18:05:06,883 - INFO - Epoch 1 completed in 101.15s
+2025-06-20 18:05:06,883 - INFO - Train Acc: 50.94%, Val Acc: 90.43%
+2025-06-20 18:05:06,884 - INFO - Epoch 2/2 - Training phase
+2025-06-20 18:05:08,731 - INFO -   Batch 10/519, Loss: 1.1145, Batch time: 0.1749s
+2025-06-20 18:05:10,499 - INFO -   Batch 20/519, Loss: 1.1370, Batch time: 0.1748s
+2025-06-20 18:05:12,265 - INFO -   Batch 30/519, Loss: 1.1375, Batch time: 0.1748s
+2025-06-20 18:05:14,031 - INFO -   Batch 40/519, Loss: 1.0973, Batch time: 0.1775s
+2025-06-20 18:05:15,791 - INFO -   Batch 50/519, Loss: 1.0743, Batch time: 0.1781s
+2025-06-20 18:05:17,552 - INFO -   Batch 60/519, Loss: 1.0827, Batch time: 0.1765s
+2025-06-20 18:05:19,312 - INFO -   Batch 70/519, Loss: 1.1156, Batch time: 0.1753s
+2025-06-20 18:05:21,074 - INFO -   Batch 80/519, Loss: 1.0741, Batch time: 0.1755s
+2025-06-20 18:05:22,836 - INFO -   Batch 90/519, Loss: 1.0216, Batch time: 0.1753s
+2025-06-20 18:05:24,596 - INFO -   Batch 100/519, Loss: 1.0360, Batch time: 0.1751s
+2025-06-20 18:05:26,357 - INFO -   Batch 110/519, Loss: 1.0326, Batch time: 0.1749s
+2025-06-20 18:05:28,114 - INFO -   Batch 120/519, Loss: 1.0294, Batch time: 0.1758s
+2025-06-20 18:05:29,870 - INFO -   Batch 130/519, Loss: 1.0038, Batch time: 0.1752s
+2025-06-20 18:05:31,628 - INFO -   Batch 140/519, Loss: 1.0004, Batch time: 0.1755s
+2025-06-20 18:05:33,387 - INFO -   Batch 150/519, Loss: 0.9813, Batch time: 0.1764s
+2025-06-20 18:05:35,147 - INFO -   Batch 160/519, Loss: 0.9889, Batch time: 0.1764s
+2025-06-20 18:05:36,904 - INFO -   Batch 170/519, Loss: 0.9936, Batch time: 0.1758s
+2025-06-20 18:05:38,662 - INFO -   Batch 180/519, Loss: 0.9652, Batch time: 0.1757s
+2025-06-20 18:05:40,423 - INFO -   Batch 190/519, Loss: 0.9781, Batch time: 0.1764s
+2025-06-20 18:05:42,182 - INFO -   Batch 200/519, Loss: 0.9814, Batch time: 0.1764s
+2025-06-20 18:05:43,940 - INFO -   Batch 210/519, Loss: 0.9866, Batch time: 0.1763s
+2025-06-20 18:05:45,702 - INFO -   Batch 220/519, Loss: 0.9469, Batch time: 0.1769s
+2025-06-20 18:05:47,457 - INFO -   Batch 230/519, Loss: 0.8994, Batch time: 0.1753s
+2025-06-20 18:05:49,217 - INFO -   Batch 240/519, Loss: 0.9401, Batch time: 0.1755s
+2025-06-20 18:05:50,983 - INFO -   Batch 250/519, Loss: 0.9287, Batch time: 0.1764s
+2025-06-20 18:05:52,744 - INFO -   Batch 260/519, Loss: 0.9514, Batch time: 0.1768s
+2025-06-20 18:05:54,505 - INFO -   Batch 270/519, Loss: 0.9282, Batch time: 0.1744s
+2025-06-20 18:05:56,268 - INFO -   Batch 280/519, Loss: 0.8948, Batch time: 0.1749s
+2025-06-20 18:05:58,032 - INFO -   Batch 290/519, Loss: 0.8728, Batch time: 0.1755s
+2025-06-20 18:05:59,794 - INFO -   Batch 300/519, Loss: 0.9048, Batch time: 0.1757s
+2025-06-20 18:06:01,558 - INFO -   Batch 310/519, Loss: 0.8628, Batch time: 0.1773s
+2025-06-20 18:06:03,320 - INFO -   Batch 320/519, Loss: 0.8891, Batch time: 0.1762s
+2025-06-20 18:06:05,081 - INFO -   Batch 330/519, Loss: 0.8748, Batch time: 0.1770s
+2025-06-20 18:06:06,847 - INFO -   Batch 340/519, Loss: 0.9144, Batch time: 0.1760s
+2025-06-20 18:06:08,609 - INFO -   Batch 350/519, Loss: 0.8826, Batch time: 0.1759s
+2025-06-20 18:06:10,372 - INFO -   Batch 360/519, Loss: 0.9009, Batch time: 0.1766s
+2025-06-20 18:06:12,134 - INFO -   Batch 370/519, Loss: 0.8032, Batch time: 0.1773s
+2025-06-20 18:06:13,898 - INFO -   Batch 380/519, Loss: 0.8979, Batch time: 0.1761s
+2025-06-20 18:06:15,664 - INFO -   Batch 390/519, Loss: 0.8539, Batch time: 0.1759s
+2025-06-20 18:06:17,428 - INFO -   Batch 400/519, Loss: 0.8261, Batch time: 0.1754s
+2025-06-20 18:06:19,194 - INFO -   Batch 410/519, Loss: 0.8633, Batch time: 0.1778s
+2025-06-20 18:06:20,959 - INFO -   Batch 420/519, Loss: 0.7844, Batch time: 0.1759s
+2025-06-20 18:06:22,725 - INFO -   Batch 430/519, Loss: 0.8047, Batch time: 0.1749s
+2025-06-20 18:06:24,492 - INFO -   Batch 440/519, Loss: 0.7671, Batch time: 0.1763s
+2025-06-20 18:06:26,253 - INFO -   Batch 450/519, Loss: 0.7947, Batch time: 0.1768s
+2025-06-20 18:06:28,017 - INFO -   Batch 460/519, Loss: 0.7872, Batch time: 0.1777s
+2025-06-20 18:06:29,779 - INFO -   Batch 470/519, Loss: 0.8507, Batch time: 0.1750s
+2025-06-20 18:06:31,545 - INFO -   Batch 480/519, Loss: 0.7338, Batch time: 0.1757s
+2025-06-20 18:06:33,310 - INFO -   Batch 490/519, Loss: 0.7374, Batch time: 0.1774s
+2025-06-20 18:06:35,073 - INFO -   Batch 500/519, Loss: 0.7625, Batch time: 0.1768s
+2025-06-20 18:06:36,836 - INFO -   Batch 510/519, Loss: 0.7995, Batch time: 0.1761s
+2025-06-20 18:06:38,356 - INFO -   Training - Loss: 0.9299, Accuracy: 90.44%, Avg batch time: 0.1759s
+2025-06-20 18:06:38,356 - INFO - Epoch 2/2 - Validation phase
+2025-06-20 18:06:52,394 - INFO -   Validation - Loss: 0.7583, Accuracy: 90.43%
+2025-06-20 18:06:52,394 - INFO -   Per-class accuracy: Class 0: 100.00%, Class 1: N/A, Class 2: 0.00%, Class 3: 0.00%, Class 4: N/A
+2025-06-20 18:06:52,394 - INFO - Epoch 2 completed in 105.51s
+2025-06-20 18:06:52,394 - INFO - Train Acc: 90.44%, Val Acc: 90.43%
+2025-06-20 18:06:52,395 - INFO - Training completed in 206.67s (3.44m)
+2025-06-20 18:06:52,442 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,446 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,450 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,453 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,467 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,467 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,476 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,478 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,545 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,553 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,556 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,560 - INFO - Saved accuracy plot to accuracy_plot_20250620_180652.png
+2025-06-20 18:06:52,581 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,582 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,582 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,582 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,597 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,598 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,605 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,606 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,671 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,676 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,677 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:06:52,680 - INFO - Saved loss plot to loss_plot_20250620_180652.png
+2025-06-20 18:06:52,680 - INFO - Performing final model evaluation
+2025-06-20 18:07:06,552 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           N       0.90      1.00      0.95     15002
+           V       0.00      0.00      0.00      1426
+           F       0.00      0.00      0.00       161
+
+    accuracy                           0.90     16589
+   macro avg       0.30      0.33      0.32     16589
+weighted avg       0.82      0.90      0.86     16589
+
+2025-06-20 18:07:06,608 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:07:06,608 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:07:06,616 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:07:06,660 - WARNING - findfont: Font family 'serif bold' not found.
+2025-06-20 18:07:06,667 - INFO - Saved confusion matrix to confusion_matrix_20250620_180706.png
+2025-06-20 18:07:06,674 - INFO - Saved model to ecg_model_20250620_180706.pth
+2025-06-20 18:07:06,678 - INFO - Training complete!
